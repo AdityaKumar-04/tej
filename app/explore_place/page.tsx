@@ -2,7 +2,6 @@
 import React from 'react'
 
 import {
-  // IoPeopleOutline,
   IoSparklesOutline,
   IoHappyOutline,
   IoTrailSignOutline,
@@ -18,7 +17,7 @@ const getRandomEmoji = () => {
   const emojis = ["🗓️", "🌟", "📅", "🎉", "✨", "📌", "🏷️", "🎈", "🌍", "🏖️", "🏞️", "🏰"];
   return emojis[Math.floor(Math.random() * emojis.length)];
 };
-export default function explore_place() {
+export default function Exploreplace() {
   const router = useRouter();
 
   const places = [
