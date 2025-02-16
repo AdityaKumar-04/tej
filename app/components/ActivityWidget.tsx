@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 
 const ActivitiesWidget = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [animationValue, setAnimationValue] = useState(550);
+  const [slidesToShow, setSlidesToShow] = useState(1);
+
   const activities = [  
     { img: "/assets/reviews/2.JPG", title: "Rajasthan, India" },
     { img: "/assets/reviews/9.JPG", title: "Goa, India" },
@@ -17,48 +20,26 @@ const ActivitiesWidget = () => {
     { img: "/assets/reviews/7.JPG", title: "Delhi, India" },
     { img: "/assets/reviews/12.JPG", title: "Goa, India" },
     { img: "/assets/reviews/1.JPG", title: "Goa, India" },
-    
   ];
 
-  const getSlidesToShow = () => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth >= 1280) return 0; // Large screens
-      if (window.innerWidth >= 1024) return 0; // Medium screens
-      if (window.innerWidth >= 768) return 0; // Tablets
-      return 1; // Mobile screens
+      const updateValues = () => {
+        const width = window.innerWidth;
+        setSlidesToShow(width >= 1280 ? 0 : width >= 1024 ? 0 : width >= 768 ? 0 : 1);
+        setAnimationValue(width >= 1280 ? 230 : width >= 1024 ? 350 : width >= 768 ? 550 : 550);
+      };
+      
+      updateValues(); // Set initial values
+      window.addEventListener("resize", updateValues);
+      return () => window.removeEventListener("resize", updateValues);
     }
-    return 1;
-  };
-
-  const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
-
-  const getAnimationValue = () => {
-    if (window.innerWidth >= 1280) return 230;
-    if (window.innerWidth >= 1024) return 350;
-    if (window.innerWidth >= 768) return 550;
-    return 550;
-  };
-
-  const [animationValue, setAnimationValue] = useState(getAnimationValue());
-
-  useEffect(() => {
-    const updateSlides = () => setSlidesToShow(getSlidesToShow());
-    window.addEventListener("resize", updateSlides);
-    return () => window.removeEventListener("resize", updateSlides);
-  }, []);
-
-  
-
-  useEffect(() => {
-    const updateAnimationValue = () => setAnimationValue(getAnimationValue());
-    window.addEventListener("resize", updateAnimationValue);
-    return () => window.removeEventListener("resize", updateAnimationValue);
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => {
-        const maxIndex = activities.length - getSlidesToShow();
+        const maxIndex = activities.length - slidesToShow;
         return prev >= maxIndex ? 0 : prev + 1;
       });
     }, 3000);
