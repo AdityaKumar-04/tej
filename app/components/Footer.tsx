@@ -97,7 +97,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/tejinfotravels" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", color: "#E4405F" }}>
+              <a href="https://www.instagram.com/tezztravels_/?igsh=Mmpyb2U5Zml0cDl1&utm_source=qr#" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", color: "#E4405F" }}>
                 <FaInstagram />
               </a>
             </li>
