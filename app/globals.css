@@ -720,10 +720,13 @@ button, a { transition: var(--transition); }
 
 .get-start .section-title { margin-bottom: 25px; }
 
-.get-start-list {
-  display: grid;
-  gap: 20px;
-}
+/* .get-start-list {
+  
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  
+} */
 
 .get-start-card {
   background: var(--white);

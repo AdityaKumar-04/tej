@@ -83,9 +83,9 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
-        <div className="flex items-center space-x-6 hidden md:flex">
+        <div className="flex items-center space-x-6">
           {/* Email Section */}
-          <div className="flex flex-col items-center text-yellow-400 font-semibold">
+          <div className="flex flex-col items-center text-yellow-400 font-semibold hidden md:flex">
             <a href="mailto:info@tejtravels.in" className="flex items-center gap-2 hover:text-yellow-300 transition">
               📧 <span>contact@tezztravels.com</span>
             </a>

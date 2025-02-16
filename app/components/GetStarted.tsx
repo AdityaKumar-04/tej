@@ -1,48 +1,42 @@
 "use client";
 
-import { FaUser, FaCar, FaMapMarkerAlt, FaSmile } from "react-icons/fa";
+import { FaCar, FaMapMarkerAlt,  FaEnvelope } from "react-icons/fa";
 
 export default function GetStarted() {
   const steps = [
     {
       id: 1,
-      title: "Create Your Profile",
+      title: "PLAN YOUR TRIP ",
       description:
-        "Sign up with your details and preferences to get started with our cab booking service.",
-      icon: <FaUser size="2rem" style={{ color: "#007bff" }} />,
-    },
-    {
-      id: 2,
-      title: "Choose Your Ride",
-      description:
-        "Browse and select the perfect cab that suits your travel needs and budget.",
+        "Plan your destination with date and time for a comfortable journey.",
       icon: <FaCar size="2rem" style={{ color: "#28a745" }} />,
     },
     {
-      id: 3,
-      title: "Set Your Journey",
+      id: 2,
+      title: "SET YOUR JOURNEY ",
       description:
-        "Provide your pickup and drop-off locations, schedule your ride, and confirm the trip.",
+        "Now schedule your trip by entering pickup and drop-off details with daye and time.",
       icon: <FaMapMarkerAlt size="2rem" style={{ color: "#ffc107" }} />,
     },
     {
-      id: 4,
-      title: "Enjoy the Ride",
+      id: 3,
+      title: "SUBMIT ENQUIRY ",
       description:
-        "Sit back and relax as our professional drivers take you to your destination safely and on time.",
-      icon: <FaSmile size="2rem" style={{ color: "#dc3545" }} />,
+        "Now after entering details submit your enquiry our team will call you regarding your trip.",
+      icon: <FaEnvelope size="2rem" style={{ color: "#007bff" }} />,
     },
+    
   ];
 
   return (
     <section className="section get-start">
       <div className="container">
-        <h2 className="h2 section-title">Travel with us in 4 Simple Steps</h2>
-        <ul className="get-start-list" style={{ listStyle: "none", padding: 0 }}>
+        <h2 className="h2 section-title">Travel with us in 3 Simple Steps</h2>
+        <ul className="get-start-list flex justify-center items-center gap-x-7 flex-wrap " style={{ listStyle: "none", padding: 0 }}>
           {steps.map((step) => (
-            <li key={step.id} style={{ marginBottom: "2rem", }}>
+            <li key={step.id} style={{ marginBottom: "2rem" }}>
               
-              <div className="max-w-full p-6 lg:w-[18rem] lg:h-[15rem] bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all">
+              <div className="max-w-full p-6 lg:w-[22rem] lg:h-[15rem] bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all">
                 {/* Icon Placeholder */}
                 <div className="w-10 h-10 mb-3 text-gray-500">{step.icon}</div>
 
