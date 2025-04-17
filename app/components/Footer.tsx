@@ -18,7 +18,7 @@ export default function Footer() {
               NCR across India. Whether you&lsquo;re traveling locally or across cities, our well-maintained vehicles and experienced drivers make your journey comfortable every time.
               <br />
               <br/>
-              Address : WZ-58, Titarpur, Tagore Garden New Delhi-110027
+              Address : 293-C, Jail Road, Nangal Rai, Near Janak Setu,New Delhi-110046
               <br />
               Email : Contact@tezztravels.com
               <br />

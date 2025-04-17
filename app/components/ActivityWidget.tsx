@@ -27,7 +27,7 @@ const ActivitiesWidget = () => {
       const updateValues = () => {
         const width = window.innerWidth;
         setSlidesToShow(width >= 1280 ? 0 : width >= 1024 ? 0 : width >= 768 ? 0 : 1);
-        setAnimationValue(width >= 1280 ? 230 : width >= 1024 ? 350 : width >= 768 ? 550 : 550);
+        setAnimationValue(width >= 1280 ? 230 : width >= 1024 ? 350 : width >= 768 ? 800 : 800);
       };
       
       updateValues(); // Set initial values

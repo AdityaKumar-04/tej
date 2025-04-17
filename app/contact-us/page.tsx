@@ -69,7 +69,7 @@ export default function ContactUsPage() {
                 <strong>Phone:</strong> <a href="tel:+918368154854" className="text-indigo-600 hover:underline">+91 83681 54854</a>
               </li>
               <li>
-                <strong>Address:</strong> WZ-58, Titarpur, Tagore Garden New Delhi-110027
+                <strong>Address:</strong> 293-C, Jail Road, Nangal Rai, Near Janak Setu,New Delhi-110046
               </li>
             </ul>
 
