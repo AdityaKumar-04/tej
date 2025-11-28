@@ -2,124 +2,105 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa"; 
+import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <Link href="#" className="logo">
-              <Image src="/assets/images/logo2.png" alt="Tej Travels logo" width={200} height={100} />
-            </Link>
-            <p className="footer-text">
-              Tezz Travels offers reliable and affordable cab and taxi booking services from Delhi 
-              NCR across India. Whether you&lsquo;re traveling locally or across cities, our well-maintained vehicles and experienced drivers make your journey comfortable every time.
+    <footer className="bg-black text-gray-300 py-12 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* TOP SECTION */}
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
+
+          {/* BRAND */}
+          <div>
+            <Image
+              src="/assets/images/logo2.png"
+              alt="Tezz Travels logo"
+              width={200}
+              height={100}
+              className="mb-4"
+            />
+
+            <p className="text-sm leading-6 text-gray-400">
+              <span className="font-extrabold">TEZZ TRAVELS</span> offers reliable and affordable cab and taxi booking services
+              across India. Enjoy comfortable and safe travel with well-maintained vehicles
+              and experienced drivers.
+              <br /><br />
+              <span className="text-gray-300 font-semibold">Address:</span> 293-C, Jail Road, Nangal Rai, Near Janak Setu, New Delhi-110046
               <br />
-              <br/>
-              Address : 293-C, Jail Road, Nangal Rai, Near Janak Setu,New Delhi-110046
+              <span className="text-gray-300 font-semibold">Email:</span> contact@tezztravels.com
               <br />
-              Email : Contact@tezztravels.com
-              <br />
-              Phone : +918368154854, +919811732828
+              <span className="text-gray-300 font-semibold">Phone:</span> +91 8368154854
             </p>
           </div>
-          <ul className="footer-list">
-            <li>
-              <p className="footer-list-title">Company</p>
-            </li>
-            <li>
-              <Link href="/about-us" className="footer-link">About Us</Link>
-            </li>
-            <li>
-              <Link href="/" className="footer-link">Customer Reviews</Link>
-            </li>
-            <li>
-              <Link href="/contact-us" className="footer-link">Contact Us</Link>
-            </li>
-          </ul>
-          <ul className="footer-list">
-            <li>
-              <p className="footer-list-title">Support</p>
-            </li>
-            <li>
-              <Link href="/privacy-policy" className="footer-link">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link href="/refund-policy" className="footer-link">Refund Policy</Link>
-            </li>
-            <li>
-              <Link href="/terms-and-conditions" className="footer-link">Terms & Conditions</Link>
-            </li>
-          </ul>
-          <ul className="footer-list">
-            <li>
-              <p className="footer-list-title">Popular Routes</p>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Delhi Tourism</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Jaipur (The Pink City, Rajasthan)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Agra (Taj Mahal, Uttar Pradesh)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Vrindavan (Mathura, Uttar Pradesh)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link h-14">Rishikesh and Haridwar (Uttarakhand)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Manali (Himachal Pradesh)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Uttarakhand (Nainital, Lansdowne, Ranikhet, etc.)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Tirth Yatra (Chardham)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Prayagraj, Ayodhya, Varanasi (Uttar Pradesh)</Link>
-            </li>
-            <li>
-              <Link href="#" className="footer-link">Jammu and Kashmir</Link>
-            </li>
-          </ul>
+
+          {/* COMPANY LINKS */}
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-4 relative w-fit after:block after:w-10 after:h-[2px] after:bg-[#00eaff] after:mt-1">
+              Company
+            </h3>
+            <ul className="space-y-3">
+              <li><Link href="/about-us" className="hover:text-[#00eaff] transition">About Us</Link></li>
+              <li><Link href="/" className="hover:text-[#00eaff] transition">Customer Reviews</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-[#00eaff] transition">Privacy Policy</Link></li>
+              <li><Link href="/refund-policy" className="hover:text-[#00eaff] transition">Refund Policy</Link></li>
+              <li><Link href="/terms-and-conditions" className="hover:text-[#00eaff] transition">Terms & Conditions</Link></li>
+
+            </ul>
+          </div>
+
+          {/* SUPPORT */}
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-4 relative w-fit after:block after:w-10 after:h-[2px] after:bg-[#00eaff] after:mt-1">
+              Support
+            </h3>
+            <ul className="space-y-3">
+              {/* <li><Link href="/" className="hover:text-[#00eaff] transition">Customer Reviews</Link></li> */}
+              <li><Link href="/contact-us" className="hover:text-[#00eaff] transition">Contact Us</Link></li>
+              <br/>
+              <span className="text-gray-300 font-semibold">Email:</span> contact@tezztravels.com
+              <br />
+              <span className="text-gray-300 font-semibold">Phone:</span> +91 8368154854
+            </ul>
+            
+          </div>
+
+          {/* POPULAR ROUTES */}
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-4 relative w-fit after:block after:w-10 after:h-[2px] after:bg-[#00eaff] after:mt-1">
+              Popular Routes
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Delhi Tourism</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Jaipur - Pink City</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Agra - Taj Mahal</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Vrindavan - Mathura</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Rishikesh & Haridwar</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Manali, Himachal</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Nainital, Uttarakhand</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Chardham Yatra</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Ayodhya, Varanasi</Link></li>
+              <li><Link href="#" className="hover:text-[#00eaff] transition">Jammu & Kashmir</Link></li>
+            </ul>
+          </div>
         </div>
-        <div className="footer-bottom">
-          <ul className="social-list" style={{ display: "flex", gap: "15px", padding: 0 }}>
-            <li>
-              <a href="https://www.facebook.com/share/1Cr4Et17bE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", color: "#3b5998" }}>
-                <FaFacebook />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/tezztravels_/?igsh=Mmpyb2U5Zml0cDl1&utm_source=qr#" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", color: "#E4405F" }}>
-                <FaInstagram />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", color: "#1DA1F2" }}>
-                <FaTwitter />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem", color: "#0077B5" }}>
-                <FaLinkedin />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:support@tejtravels.in" style={{ fontSize: "1.5rem", color: "#EA4335" }}>
-                <FaEnvelope />
-              </a>
-            </li>
+
+        {/* BOTTOM SECTION */}
+        <div className="border-t border-white/10 pt-6 flex flex-col items-center gap-4">
+
+          {/* SOCIAL ICONS */}
+          <ul className="flex gap-6">
+            <li><Link href="https://www.facebook.com/share/1DXmPkYENG/" className="text-[1.4rem] hover:text-[#00eaff] hover:scale-110 transition-all"><FaFacebook /></Link></li>
+            <li><Link href="https://www.instagram.com/tezztravels_?igsh=Mmpyb2U5Zml0cDl1" className="text-[1.4rem] hover:text-[#00eaff] hover:scale-110 transition-all"><FaInstagram /></Link></li>
+            <li><Link href="mailto:support@tejtravels.in" className="text-[1.4rem] hover:text-[#00eaff] hover:scale-110 transition-all"><FaEnvelope /></Link></li>
           </ul>
-          <p className="copyright" style={{ marginTop: "1rem", fontSize: "0.9rem", color: "#555" }}>
-            &copy; 2025 <Link href="#" style={{ textDecoration: "none", color: "#007bff" }}>Tezz Travels All Rights Reserved.</Link>
+
+          {/* COPYRIGHT */}
+          <p className="text-gray-500 text-sm">
+            © 2025 <span className="text-[#00eaff]">Tezz Travels</span>. All Rights Reserved.
           </p>
+
         </div>
       </div>
     </footer>

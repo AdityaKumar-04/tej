@@ -51,7 +51,7 @@ export default function ContactUsPage() {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-6 mt-20 min-h-screen grid items-center py-3 px-4">
+      <div className="container mx-auto px-6 mt-20 min-h-screen grid items-center py-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left side - Contact Details */}
           <div className="space-y-6">

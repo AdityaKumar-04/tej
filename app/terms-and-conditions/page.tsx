@@ -10,10 +10,13 @@ export default function TermsAndConditionsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative w-full h-64">
-        
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-white text-4xl font-bold">Terms & Conditions</h1>
+      <div className="relative w-full h-60 mt-16">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center px-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-wide">
+            Terms & Conditions
+          </h1>
+          
         </div>
       </div>
 

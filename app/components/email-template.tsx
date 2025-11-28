@@ -23,7 +23,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       <p><strong>📅 Trip Start Date:</strong> {trip_start_date}</p>
       <p><strong>⏰ Trip Start Time:</strong> {trip_start_time}</p>
       <p><strong>📅 Trip End Date:</strong> {trip_end_date}</p>
-      <p><strong>📞 Phone Number:</strong> <a href="tel:${phoneNumber}" className="color: #007bff;">{phone_number}</a></p>
+      <p><strong>📞 Phone Number:</strong> <a href="" className="color: #007bff;">{phone_number}</a></p>
       <p><strong>🫡 Status:</strong> {status}</p>
     </div>
 

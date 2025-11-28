@@ -2,22 +2,25 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturedCars from './components/FeaturedCars';
 import GetStarted from './components/GetStarted';
-import Blog from './components/Blog';
 import Footer from './components/Footer';
 import CustomerReviews from './components/CustomerReviews';
 import ActivitiesWidget from './components/ActivityWidget';
+import CarsShowcase from './components/Carview';
+
+
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main >
         <Hero />
+        <CarsShowcase />
         <FeaturedCars />
         <GetStarted />
         <CustomerReviews />
         <ActivitiesWidget />
-        <Blog />
+        
       </main>
       <Footer />
     </>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
   // IoPeopleOutline,
@@ -11,14 +12,14 @@ import {
 
 // Utility function to get a random emoji
 const getRandomEmoji = () => {
-  const emojis = ["🗓️", "🌟", "📅", "🎉", "✨", "📌", "🏷️", "🎈", "🌍", "🏖️", "🏞️", "🏰"];
+  const emojis = ["🗓️", "🌟", "🎆", "🎉", "✨", "📌", "🏷️", "🎈", "🌍", "🏖️", "🏞️", "🏰"];
   return emojis[Math.floor(Math.random() * emojis.length)];
 };
 
 export default function FeaturedPlaces() {
   const router = useRouter();
 
-const places = [
+  const places = [
     {
       id: 1,
       name: "Agra (Taj Mahal, Uttar Pradesh)",
@@ -130,66 +131,92 @@ const places = [
       image: "/assets/jammu kashmir.webp",
     },
   ];
-
   return (
-    <section className="section featured-car" id="featured-car">
-      <div className="container ">
-        <div className="title-wrapper">
-          <h2 className="h2 section-title">Popular Places to Visit</h2>
-          <a href="#home" className="featured-car-link">
-            <span onClick={()=>router.push("/explore_place")}>View more</span>
-            <IoArrowForwardOutline style={{ fontSize: "1.2rem", color: "gray" }} />
-          </a>
+    <section className="py-20 bg-white/70" id="featured-car">
+      <div className="container mx-auto px-4">
+
+        {/* HEADER */}
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+            Popular Places To Visit
+          </h2>
+
+          <button
+            onClick={() => router.push("/explore_place")}
+            className="flex items-center gap-2 text-gray-600 hover:text-black transition"
+          >
+            <span className="text-base font-extrabold">View More</span>
+            <IoArrowForwardOutline className="text-xl" />
+          </button>
         </div>
-        <ul className="featured-car-list">
-          {places.slice(0,6).map((place) => (
-            <li key={place.id}>
-              <div className="featured-car-card">
-                <figure className="card-banner">
-                  <img
-                    src={place.image}
-                    alt={`${place.name}`}
-                    loading="lazy"
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                </figure>
-                <div className="card-content">
-                  <div className="card-title-wrapper">
-                    <h3 className="h3 card-title">
-                      <a href="#">{place.name}</a>
-                    </h3>
-                    <data className="year" value={place.year}>
-                      {place.year}
-                    </data>
+
+        {/* SMALLER CARDS GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {places.slice(0, 3).map((place) => (
+            <div
+              key={place.id}
+              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden group"
+            >
+              {/* IMAGE SMALLER */}
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={place.image}
+                  alt={place.name}
+                  fill
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent"></div>
+
+                <span className="absolute top-3 left-3 bg-white/80 backdrop-blur-md rounded-full px-3 py-0.5 text-xs font-semibold shadow">
+                  {place.year}
+                </span>
+              </div>
+
+              {/* CONTENT SMALLER */}
+              <div className="p-4 space-y-3">
+
+                <h3 className="text-lg font-semibold text-gray-900 leading-snug">
+                  {place.name}
+                </h3>
+
+                <div className="space-y-1.5 text-sm">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <IoSparklesOutline className="text-lg text-blue-500" />
+                    <span>{place.fuel}</span>
                   </div>
-                  <ul className="card-list">
-                    
-                    <li className="card-list-item">
-                      <IoSparklesOutline style={{ fontSize: "1.2rem", color: "gray" }} />
-                      <span className="card-item-text ">{place.fuel}</span>
-                    </li>
-                    <li className="card-list-item">
-                      <IoHappyOutline style={{ fontSize: "1.2rem", color: "gray" }} />
-                      <span className="card-item-text ">{place.mileage}</span>
-                    </li>
-                    <li className="card-list-item">
-                      <IoTrailSignOutline style={{ fontSize: "1.2rem", color: "gray" }} />
-                      <span className="card-item-text">{place.transmission}</span>
-                    </li>
-                  </ul>
-                  <div className="card-price-wrapper">
-                    <p className="card-price">
-                      <small>{place.priceDescription}</small>
-                    </p>
-                    <button className="btn" onClick={() => router.push("#home")}>Enquiry</button>
+
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <IoHappyOutline className="text-lg text-green-500" />
+                    <span>{place.mileage}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <IoTrailSignOutline className="text-lg text-orange-500" />
+                    <span>{place.transmission}</span>
                   </div>
                 </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  <p className="text-gray-800 font-semibold text-sm">
+                    {place.priceDescription}
+                  </p>
+
+                  <button
+                    onClick={() => router.push("#home")}
+                    className="px-3 py-1.5 bg-black text-white text-sm rounded-lg hover:bg-gray-900 transition"
+                  >
+                    Enquiry
+                  </button>
+                </div>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
 
       </div>
     </section>
   );
+
+
 }

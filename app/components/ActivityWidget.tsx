@@ -2,67 +2,124 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ActivitiesWidget = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [animationValue, setAnimationValue] = useState(550);
   const [slidesToShow, setSlidesToShow] = useState(1);
+  const [cardWidth, setCardWidth] = useState(0);
 
-  const activities = [  
+  const activities = [
     { img: "/assets/reviews/2.JPG", title: "Rajasthan, India" },
-    { img: "/assets/reviews/9.JPG", title: "Goa, India" },
+    { img: "/assets/reviews/9.JPG", title: "Delhi Transfer" },
     { img: "/assets/reviews/17.JPG", title: "Jaipur, Rajasthan" },
-    { img: "/assets/reviews/3.JPG", title: "Kerala, India" },
+    { img: "/assets/reviews/3.JPG", title: "Delhi Local Rental" },
     { img: "/assets/reviews/4.JPG", title: "Manali, Himachal" },
-    { img: "/assets/reviews/18.JPG", title: "Goa, India" },
+    { img: "/assets/reviews/18.JPG", title: "Delhi Local" },
     { img: "/assets/reviews/5.JPG", title: "Kufri, Himachal" },
     { img: "/assets/reviews/6.JPG", title: "Taj Mahal, Agra" },
     { img: "/assets/reviews/7.JPG", title: "Delhi, India" },
-    { img: "/assets/reviews/12.JPG", title: "Goa, India" },
-    { img: "/assets/reviews/1.JPG", title: "Goa, India" },
+    { img: "/assets/reviews/12.JPG", title: "Uttarakhand, India" },
+    { img: "/assets/reviews/1.JPG", title: "Jaipur, Rajasthan" },
   ];
 
+  // RESPONSIVE SLIDES
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const updateValues = () => {
-        const width = window.innerWidth;
-        setSlidesToShow(width >= 1280 ? 0 : width >= 1024 ? 0 : width >= 768 ? 0 : 1);
-        setAnimationValue(width >= 1280 ? 230 : width >= 1024 ? 350 : width >= 768 ? 800 : 800);
-      };
-      
-      updateValues(); // Set initial values
-      window.addEventListener("resize", updateValues);
-      return () => window.removeEventListener("resize", updateValues);
-    }
+    const updateSlides = () => {
+      const w = window.innerWidth;
+      if (w >= 1280) setSlidesToShow(4);
+      else if (w >= 1024) setSlidesToShow(3);
+      else if (w >= 768) setSlidesToShow(2);
+      else setSlidesToShow(1);
+    };
+
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
   }, []);
 
+  // CALCULATE CARD WIDTH FOR PERFECT SLIDE
   useEffect(() => {
+    const updateCardWidth = () => {
+      const container = document.getElementById("activity-slider");
+      if (container) {
+        const fullWidth = container.offsetWidth;
+        const gap = 16; // gap-4 = 16px
+        setCardWidth(fullWidth / slidesToShow + gap);
+      }
+    };
+
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
+
+    return () => window.removeEventListener("resize", updateCardWidth);
+  }, [slidesToShow]);
+
+  // AUTOPLAY
+  useEffect(() => {
+    const maxIndex = activities.length - slidesToShow;
     const interval = setInterval(() => {
-      setActiveIndex((prev) => {
-        const maxIndex = activities.length - slidesToShow;
-        return prev >= maxIndex ? 0 : prev + 1;
-      });
-    }, 3000);
+      setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 2800);
+
     return () => clearInterval(interval);
-  }, [activities.length, slidesToShow]);
+  }, [slidesToShow]);
 
   return (
-    <div className="relative w-full overflow-hidden p-6">
-      <div className="max-w-6xl mx-auto overflow-hidden">
-        <motion.div
-          className="flex gap-3"
-          initial={{ x: 0 }}
-          animate={{ x: `-${activeIndex * (animationValue / activities.length)}%` }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          {activities.map((activity, index) => (
-            <div key={index} className="flex-shrink-0">
-              <img src={activity.img} alt={activity.title} className="w-[20rem] h-[20rem] object-cover rounded-lg" />
-            </div>
-          ))}
-        </motion.div>
+    <section className="py-20 bg-[#f7f9fb]">
+
+      {/* Heading */}
+      <div className="text-center mb-14">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          Our Travelling Memories
+        </h2>
+        <p className="text-gray-500 mt-3 text-lg">
+          Real journeys. Real people. Real experiences.
+        </p>
       </div>
-    </div>
+
+      {/* SLIDER */}
+      <div className="relative w-full py-5 overflow-hidden">
+        <div
+          id="activity-slider"
+          className="max-w-7xl mx-auto overflow-hidden relative"
+        >
+          <motion.div
+            className="flex"
+            animate={{ x: -(activeIndex * cardWidth) }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
+          >
+            {activities.map((activity, index) => (
+              <div
+                key={index}
+                className="mr-4 flex-shrink-0"
+                style={{ width: `calc((100% / ${slidesToShow}) - 16px)` }}
+              >
+                <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden shadow-lg relative">
+                  
+                  {/* FIXED IMAGE */}
+                  <Image
+                    src={activity.img}
+                    alt={activity.title}
+                    className="w-full h-full object-fit"
+                    width={500}
+                    height={350}
+                  />
+
+                  {/* TITLE */}
+                  <div className="absolute bottom-0 left-0 right-0 
+                    bg-gradient-to-t from-black/70 to-transparent 
+                    p-4 text-white text-center font-semibold">
+                    {activity.title}
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 };
 

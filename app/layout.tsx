@@ -1,6 +1,7 @@
 import './globals.css';
 import Script from 'next/script';
 import { Libre_Baskerville} from "next/font/google";
+import WhatsAppButton from './components/WhatsAppButton';
 
 
 const libre = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"], style: ["normal", "italic"]  });
@@ -22,6 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
 
+        <WhatsAppButton />
+
         {/* Include Ionicons */}
         <Script
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -39,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://checkout.razorpay.com/v1/checkout.js"
           strategy="afterInteractive"
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16888309041"></script>
       </body>
     </html>
   );
