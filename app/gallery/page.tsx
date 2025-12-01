@@ -6,21 +6,21 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 
 const images = [
-  "/assets/reviews/1.jpg",
-  "/assets/reviews/2.jpg",
-  "/assets/reviews/3.jpg",
-  "/assets/reviews/4.jpg",
-  "/assets/reviews/5.jpg",
-  "/assets/reviews/6.jpg",
-  "/assets/reviews/7.jpg",
-  "/assets/reviews/8.jpg",
-  "/assets/reviews/9.jpg",
+  "/assets/reviews/1.PNG",
+  "/assets/reviews/2.PNG",
+  "/assets/reviews/3.PNG",
+  "/assets/reviews/4.PNG",
+  "/assets/reviews/5.PNG",
+  "/assets/reviews/6.PNG",
+  "/assets/reviews/7.PNG",
+  "/assets/reviews/8.PNG",
+  "/assets/reviews/9.PNG",
   "/assets/reviews/11.PNG",
-  "/assets/reviews/12.jpg",
-  "/assets/reviews/14.jpg",
-  "/assets/reviews/15.jpg",
-  "/assets/reviews/17.jpg",
-  "/assets/reviews/18.jpg",
+  "/assets/reviews/12.PNG",
+  "/assets/reviews/14.PNG",
+  "/assets/reviews/15.PNG",
+  "/assets/reviews/17.PNG",
+  "/assets/reviews/18.PNG",
 ];
 
 export default function PhoneGallery() {

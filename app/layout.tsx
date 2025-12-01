@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
         <meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=no" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
+       
       </head>
       <body>
         {children}
@@ -37,12 +37,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
 
-        {/* Include Razorpay */}
+        {/* Include Razorpay
         <Script
           src="https://checkout.razorpay.com/v1/checkout.js"
           strategy="afterInteractive"
-        />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16888309041"></script>
+        /> */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16888309041" />
       </body>
     </html>
   );

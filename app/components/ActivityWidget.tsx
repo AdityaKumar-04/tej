@@ -95,8 +95,10 @@ const ActivitiesWidget = () => {
                 className="mr-4 flex-shrink-0"
                 style={{ width: `calc((100% / ${slidesToShow}) - 16px)` }}
               >
-                <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden shadow-lg relative">
-                  
+                {/* <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden shadow-lg relative"> */}
+                <div className="w-full h-[350px] sm:h-72 md:h-72 rounded-xl overflow-hidden shadow-lg relative">
+
+
                   {/* FIXED IMAGE */}
                   <Image
                     src={activity.img}
