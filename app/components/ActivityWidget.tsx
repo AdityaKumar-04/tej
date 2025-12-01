@@ -10,17 +10,17 @@ const ActivitiesWidget = () => {
   const [cardWidth, setCardWidth] = useState(0);
 
   const activities = [
-    { img: "/assets/reviews/2.JPG", title: "Rajasthan, India" },
-    { img: "/assets/reviews/9.JPG", title: "Delhi Transfer" },
-    { img: "/assets/reviews/17.JPG", title: "Jaipur, Rajasthan" },
-    { img: "/assets/reviews/3.JPG", title: "Delhi Local Rental" },
-    { img: "/assets/reviews/4.JPG", title: "Manali, Himachal" },
-    { img: "/assets/reviews/18.JPG", title: "Delhi Local" },
-    { img: "/assets/reviews/5.JPG", title: "Kufri, Himachal" },
-    { img: "/assets/reviews/6.JPG", title: "Taj Mahal, Agra" },
-    { img: "/assets/reviews/7.JPG", title: "Delhi, India" },
-    { img: "/assets/reviews/12.JPG", title: "Uttarakhand, India" },
-    { img: "/assets/reviews/1.JPG", title: "Jaipur, Rajasthan" },
+    { img: "/assets/reviews/2.PNG", title: "Rajasthan, India" },
+    { img: "/assets/reviews/9.PNG", title: "Delhi Transfer" },
+    { img: "/assets/reviews/17.PNG", title: "Jaipur, Rajasthan" },
+    { img: "/assets/reviews/3.PNG", title: "Delhi Local Rental" },
+    { img: "/assets/reviews/4.PNG", title: "Manali, Himachal" },
+    { img: "/assets/reviews/18.PNG", title: "Delhi Local" },
+    { img: "/assets/reviews/5.PNG", title: "Kufri, Himachal" },
+    { img: "/assets/reviews/6.PNG", title: "Taj Mahal, Agra" },
+    { img: "/assets/reviews/7.PNG", title: "Delhi, India" },
+    { img: "/assets/reviews/12.PNG", title: "Uttarakhand, India" },
+    { img: "/assets/reviews/1.PNG", title: "Jaipur, Rajasthan" },
   ];
 
   // RESPONSIVE SLIDES

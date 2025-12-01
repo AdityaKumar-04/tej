@@ -12,11 +12,11 @@ interface Review {
 }
 
 const reviews: Review[] = [
-  { id: 1, name: "Rohit Malhotra", image_url: "/assets/reviews/1.JPG", feedback: "An outstanding travel experience! The driver was professional, and the ride was smooth and enjoyable. Highly recommended!" },
-  { id: 2, name: "Sneha Kapoor", image_url: "/assets/reviews/6.JPG", feedback: "I had a hassle-free booking experience. The service was punctual, and the vehicle was well-maintained. Will book again!" },
-  { id: 3, name: "Arjun Khanna", image_url: "/assets/reviews/4.JPG", feedback: "Great service at a reasonable price. The driver was courteous, and the journey was very comfortable. Five stars!" },
-  { id: 4, name: "Meera Joshi", image_url: "/assets/reviews/2.JPG", feedback: "One of the best travel services I have used. Everything was well-organized, and I felt safe throughout my journey." },
-  { id: 5, name: "Karan Mehta", image_url: "/assets/reviews/3.JPG", feedback: "Clean car, on-time service, and a smooth ride. The entire process was effortless, and I had a great time!" },
+  { id: 1, name: "Rohit Malhotra", image_url: "/assets/reviews/1.PNG", feedback: "An outstanding travel experience! The driver was professional, and the ride was smooth and enjoyable. Highly recommended!" },
+  { id: 2, name: "Sneha Kapoor", image_url: "/assets/reviews/6.PNG", feedback: "I had a hassle-free booking experience. The service was punctual, and the vehicle was well-maintained. Will book again!" },
+  { id: 3, name: "Arjun Khanna", image_url: "/assets/reviews/4.PNG", feedback: "Great service at a reasonable price. The driver was courteous, and the journey was very comfortable. Five stars!" },
+  { id: 4, name: "Meera Joshi", image_url: "/assets/reviews/2.PNG", feedback: "One of the best travel services I have used. Everything was well-organized, and I felt safe throughout my journey." },
+  { id: 5, name: "Karan Mehta", image_url: "/assets/reviews/3.PNG", feedback: "Clean car, on-time service, and a smooth ride. The entire process was effortless, and I had a great time!" },
 ];
 
 export default function CustomerReviewsSlider() {

@@ -1,10 +1,11 @@
 import './globals.css';
 import Script from 'next/script';
-import { Libre_Baskerville} from "next/font/google";
+import { Libre_Baskerville } from "next/font/google";
 import WhatsAppButton from './components/WhatsAppButton';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
-const libre = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"], style: ["normal", "italic"]  });
+const libre = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"], style: ["normal", "italic"] });
 
 export const metadata = {
   title: 'Tezz Travels - Cab and Taxi Booking Service',
@@ -18,12 +19,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
         <meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=no" />
-       
+
       </head>
       <body>
         {children}
 
         <WhatsAppButton />
+
+        {/* Speed Insights (Vercel Analytics) */}
+        <SpeedInsights />
 
         {/* Include Ionicons */}
         <Script
