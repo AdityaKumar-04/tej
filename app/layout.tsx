@@ -3,6 +3,14 @@ import Script from 'next/script';
 import { Libre_Baskerville } from "next/font/google";
 import WhatsAppButton from './components/WhatsAppButton';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Zalando_Sans } from "next/font/google";
+
+const zalandoSans = Zalando_Sans({
+  subsets: ["latin"],
+  weight: ["200","300","400","500","600","700","800","900"],
+  style: ["normal","italic"],
+  display: "swap",
+});
 
 
 const libre = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"], style: ["normal", "italic"] });
@@ -21,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=no" />
 
       </head>
-      <body>
+      <body className={zalandoSans.className}>
         {children}
 
         <WhatsAppButton />
