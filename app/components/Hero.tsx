@@ -173,6 +173,7 @@ export default function Hero() {
                     fetchSuggestions(e.target.value, setPickupSuggestions);
                   }}
                   placeholder="Enter pickup city"
+                  required
                 />
 
                 {pickupSuggestions.length > 0 && (
@@ -206,6 +207,7 @@ export default function Hero() {
                     fetchSuggestions(e.target.value, setDestinationSuggestions);
                   }}
                   placeholder="Enter destination city"
+                  required
                 />
 
                 {destinationSuggestions.length > 0 && (
@@ -241,6 +243,7 @@ export default function Hero() {
                   className="border border-gray-300 p-3 rounded-xl w-full focus:border-black focus:ring-2 focus:ring-gray-400"
                   value={form.tripStartDate}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
 
@@ -252,6 +255,7 @@ export default function Hero() {
                   className="border border-gray-300 p-3 rounded-xl w-full focus:border-black focus:ring-2 focus:ring-gray-400"
                   value={form.tripEndDate}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
 
@@ -267,6 +271,7 @@ export default function Hero() {
                 placeholder="Enter your phone number"
                 value={form.phoneNumber}
                 onChange={handleInputChange}
+                required
               />
             </div>
 
