@@ -7,12 +7,12 @@ import { FaLocationArrow, FaMapPin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Toaster, toast } from "react-hot-toast";
 
+
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoicmFodWxzYWhuaTE2OSIsImEiOiJjbHprM3I0bHMwbmIzMmtyMHQ0d3Q2aDF1In0.rNhynN4QO1to7V1A94vT0Q";
 
-const SUPABASE_URL = "https://fgcvmbrvxniokscuukvd.supabase.co";
-const SUPABASE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnY3ZtYnJ2eG5pb2tzY3V1a3ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY0OTg2MDUsImV4cCI6MjA0MjA3NDYwNX0.5q2krAQ8lrkuiYx84tHoQs4fEqEcNKO54fDcrHEL1AQ";
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
