@@ -13,6 +13,8 @@ const MAPBOX_TOKEN =
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+console.log("Supabase URL:", SUPABASE_URL);
+console.log("Supabase Key:", SUPABASE_KEY);
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
