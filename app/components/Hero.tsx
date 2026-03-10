@@ -12,10 +12,6 @@ const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-console.log("Supabase URL:", SUPABASE_URL);
-console.log("Supabase Key:", SUPABASE_KEY);
-console.log("Mapbox Token:", MAPBOX_TOKEN);
-
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 interface Suggestion {
@@ -54,6 +50,7 @@ export default function Hero() {
         }
       );
       setter(res.data.features);
+      console.log("Suggestions fetched:", res.data.features);
     } catch (error) {
       console.error("Suggestion Error:", error);
     }
